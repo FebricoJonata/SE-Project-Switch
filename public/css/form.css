@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Gamer;
+    src: url('Gamer.ttf');
+}
+
+#content {
+    background: #2A3036;
+    padding: 20px 40px 20px 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+#modal-header h1 {
+    font-family: Gamer;
+    font-size: 50px;
+    color: #A459FF;
+}
+
+#form {
+    display: grid;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#form label {
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+input {
+    border-radius: 10px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    padding-left: 10px;
+}
+
+input:focus {
+    border: 2px solid white;
+    outline: none;
+    color: white;
+}
+
+#error-msg {
+    display: block;
+    margin-top: 10px;
+    justify-self: center;
+    align-items: center;
+    color: red;
+}
+
+#msg {
+    justify-self: center;
+    align-items: center;
+}
+
+#login-btn {
+    justify-self: center;
+    align-items: center;
+    height: 40px;
+    width: 140px;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: #A459FF;
+    border: none;
+}

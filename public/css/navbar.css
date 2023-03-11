@@ -1,0 +1,61 @@
+#judul-app {
+    color: orange;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+#modal-backdrop {
+    opacity: 0.3;
+}
+
+#search-button {
+    color: black;
+    margin-right: 50px;
+}
+
+#navbar-background {
+    background-color: transparent;
+    padding-top: 20px;
+}
+
+#search-button:hover {
+    background-color: rgb(161, 161, 161);
+}
+
+#login-button {
+    color: rgb(255, 255, 255);
+    background-color: #2da319;
+    font-weight: 500;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#login-button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 131, 28);
+}
+
+#navbar-isi-home {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 70px;
+}
+
+#navbar-isi-about-us {
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+#nav-about-us:hover {
+    color: orange;
+}
+
+#nav-home:hover {
+    color: orange;
+}
+
+#nav-kanan {
+    margin-right: 150px;
+}
