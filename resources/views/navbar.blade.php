@@ -1,30 +1,28 @@
-<nav class="navbar navbar-expand-lg" id="navbar-background">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#" id="judul-app">SWITCH</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" id="navbar-isi-home">
-                    <a class="nav-link active" aria-current="page" href="#" id="nav-home">Home</a>
-                </li>
-                <li class="nav-item" id="navbar-isi-about-us">
-                    <a class="nav-link active" href="#" id="nav-about-us">About us</a>
-                </li>
-            </ul>
-            <div class="d-flex flex-row" id="nav-kanan">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
-                </form>
-                <button id="login-button" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                    Login
-                </button>
-                <button id="sign-up-button" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Sign Up
-                </button>
+<!-- NAVBAR -->
+<div class="container-fluid d-flex-row bg-dark" >
+    <div class="row align-items-center justify-content-between py-2">
+
+        <!-- LOGO -->
+        <div class="col-4 align-items center px-5">
+            <img src="{{asset('images/logo_switch.png')}}" alt="" id="image-logo">
+        </div>
+
+        <!-- SEARCH -->
+        <div class="col-4 py-3">
+            <form class="form-inline">
+                <input type="search" placeholder="Search for dota 2 items" aria-label="Search"
+                    id="search-navbar" class="form-control mr-sm-2" onkeyup="search_home()">
+            </form>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="col-4 align-items-center py-3">
+            <div class="d-flex justify-content-end" id="buttons">
+                <button class="btn success px-3" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
+
+                <input class="btn btn-outline rounded" type="button" value="Sign up" id="sign-up-button" data-bs-toggle="modal" data-bs-target="#regisModal">
             </div>
         </div>
     </div>
-</nav>
+</div>

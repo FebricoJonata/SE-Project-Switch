@@ -1,0 +1,129 @@
+#main-body{
+    background-color:rgb(30, 30, 30);
+}
+
+#judul-app{
+    color:orange;
+    font-size:40px;
+    padding-left:30px;
+}
+
+#search-navbar{
+    color: white;
+    background-color: transparent;
+    max-width: 60%;
+    margin:auto;
+}
+
+::-webkit-input-placeholder{
+    color:white;
+}
+/* 
+::placeholder{
+    color:rgb(255, 255, 255);
+} */
+
+#search-model{
+    color:white;
+}
+
+#buttons{
+    padding-right:2rem;
+}
+
+#navbar-background{
+    background-color: transparent;
+    padding-top:20px;
+}
+
+#image-logo{
+    max-width: 50%;
+    height:50%;
+}
+
+#search-button:hover{
+    background-color:rgb(161, 161, 161);
+}
+
+#sign-up-button{
+    background-color:#A459FF;
+    color:white;
+    font-weight: bold;
+}
+
+#sign-up-button:hover{
+    background-color:#8b2bff;
+    color:white;
+    font-weight: bold;
+}
+
+#sign-in-button{
+    color:rgb(255, 255, 255);
+    font-weight:500;
+    margin-right:10px;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+#sign-in-button:hover{
+    color:#8b2bff;
+}
+
+#background-gambar{
+    height: 100%;
+    width: 100%;
+    background: rgb(25,39,51);
+    background: -moz-linear-gradient(0deg, rgba(25,39,51,1) 74%, rgba(35,51,68,0.9023984593837535) 91%, rgba(101,101,101,0.9051995798319328) 97%, rgba(196,196,196,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(25,39,51,1) 74%, rgba(35,51,68,0.9023984593837535) 91%, rgba(101,101,101,0.9051995798319328) 97%, rgba(196,196,196,1) 100%);
+    background: linear-gradient(0deg, rgba(25,39,51,1) 74%, rgba(35,51,68,0.9023984593837535) 91%, rgba(101,101,101,0.9051995798319328) 97%, rgba(196,196,196,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#192733",endColorstr="#c4c4c4",GradientType=1);
+}
+
+#buy-now-btn{
+    color:rgb(255, 255, 255);
+    font-weight:500;
+    padding-top: 10px;
+}
+
+#buy-now-btn:hover{
+    color:rgb(149, 149, 149);
+}
+
+
+#itemName{
+    color:white;
+    font-weight: light;
+    opacity: 80%;
+}
+
+#itemSkinName{
+    color: white;
+}
+
+#itemPrice{
+    color:white;
+}
+#footer-background{
+    background-color: #252525;
+    margin-bottom:0;
+}
+
+#footer-isi{
+    text-align: center;
+    color: white;
+}
+
+#tnavbar-isi-color{
+    color: white;
+}
+
+#tnavbar-item{
+    font-weight:500;
+    color: white;
+    font-size: 20px;
+}
+
+#tnavbar-item:hover{
+    color:#8b2bff;
+}
+

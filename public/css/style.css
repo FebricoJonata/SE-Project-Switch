@@ -1,0 +1,117 @@
+#main-body {
+    background-color: rgb(30, 30, 30);
+}
+
+#background-gambar {
+    height: 100%;
+    width: 100%;
+    background-image: url(./Assets/Images/background.png);
+}
+
+#card-carousel-frame {
+    width: 100%;
+}
+
+#carousel-main {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+#carousel-main2 {
+    padding-bottom: 3rem;
+}
+
+#harga {
+    font-weight: bold;
+}
+
+#flexModel {
+    width: 100%;
+}
+
+#carouselCardItem {
+    width: 100%;
+}
+
+#card-image:hover {
+    opacity: 93%;
+    cursor: pointer;
+}
+
+#link-card {
+    color: white;
+    margin-left: 4.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: 5center;
+}
+
+#itemPrice {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#itemName {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+#card-item:hover {
+    background-color: aliceblue;
+}
+
+#link-card:hover {
+    background-color: rgb(205, 205, 205);
+    color: black;
+}
+
+#button-catalog {
+    height: 50%;
+    width: 10%;
+    margin-bottom: 3vh;
+}
+
+#description-bawah {
+    font-size: 15px;
+    opacity: 70%;
+    font-family: sans-serif;
+}
+
+#button-catalog {
+    color: #A459FF;
+    font-weight: 600;
+    outline-color: #8b2bff;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+#button-catalog:hover {
+    background: #A459FF;
+    color: white;
+}
+
+#footer-background {
+    background-color: #252525;
+}
+
+#footer-isi {
+    font-size: 20px;
+    color: white;
+}
+
+#tnavbar-isi-color {
+    color: white;
+}
+
+#tnavbar-item {
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+}
+
+#tnavbar-item:hover {
+    color: #8b2bff;
+}
