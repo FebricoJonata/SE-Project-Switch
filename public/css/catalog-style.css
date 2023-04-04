@@ -1,0 +1,186 @@
+#main-body {
+    background-color: rgb(30, 30, 30);
+}
+
+#judul-app {
+    color: orange;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+#search-navbar {
+    color: white;
+    background-color: transparent;
+    max-width: 60%;
+    margin: auto;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+
+/*
+::placeholder{
+    color:rgb(255, 255, 255);
+} */
+
+#search-model {
+    color: white;
+}
+
+#buttons {
+    padding-right: 2rem;
+}
+
+#navbar-background {
+    background-color: transparent;
+    padding-top: 20px;
+}
+
+#image-logo {
+    max-width: 50%;
+    height: 50%;
+}
+
+#search-button:hover {
+    background-color: rgb(161, 161, 161);
+}
+
+#sign-up-button {
+    background-color: #A459FF;
+    color: white;
+    font-weight: bold;
+}
+
+#sign-up-button:hover {
+    background-color: #8b2bff;
+    color: white;
+    font-weight: bold;
+}
+
+#sign-in-button {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#sign-in-button:hover {
+    color: #8b2bff;
+}
+
+#background-gambar {
+    height: 100%;
+    width: 100%;
+    background-image: url(./Assets/Images/background.png);
+}
+
+#card-carousel-frame {
+    width: 100%;
+}
+
+#carousel-main {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+#carousel-main2 {
+    padding-bottom: 3rem;
+}
+
+#harga {
+    font-weight: bold;
+}
+
+#card-image {
+    min-height: 30vh;
+    object-fit: cover;
+    max-height: 30vh;
+    width: auto;
+}
+
+#card-image:hover {
+    opacity: 93%;
+    cursor: pointer;
+}
+
+#itemPrice {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#card-body {
+    position: relative;
+}
+
+#card-body-priceButton {
+    position: absolute;
+    bottom: 0;
+}
+
+#itemName {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#card-item:hover {
+    background-color: aliceblue;
+}
+
+#link-card {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: 5center;
+    outline: #8b2bff;
+    outline-width: 2px;
+}
+
+#link-card:hover {
+    background-color: rgb(205, 205, 205);
+    color: black;
+}
+
+#judul-item {
+    font-size: 30px;
+    color: white;
+    opacity: 90%;
+}
+
+#footer-background {
+    background-color: #252525;
+}
+
+#footer-isi {
+    text-align: center;
+    color: white;
+}
+
+#bg-cons {
+    size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#tes-pos {
+    margin-top: auto;
+}
+
+#tnavbar-isi-color {
+    color: white;
+}
+
+#tnavbar-item {
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+}
+
+#tnavbar-item:hover {
+    color: #8b2bff;
+}
