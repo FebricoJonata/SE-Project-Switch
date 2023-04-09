@@ -24,7 +24,8 @@
 <style>
     @font-face{
         font-family: Gamer;
-        src: url('{{asset('font/Gamer.ttf')}}')
+        src: url('{{asset('font/Gamer.ttf')}}');
+    
     }
 </style>
 <body>
@@ -33,4 +34,5 @@
     @yield('content')
     @include('footer')
 </body>
+
 </html>

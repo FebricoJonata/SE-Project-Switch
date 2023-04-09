@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('form');
+    return view('home');
+    
 });
 
 Route::get('/home', function(){
@@ -28,3 +30,5 @@ Route::get('/catalog', function(){
 Route::get('detailPage', function(){
     return view('detailPage');
 });
+
+Route::post('register', [RegisterController::class, 'storeData']);
