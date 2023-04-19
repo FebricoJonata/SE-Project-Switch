@@ -7,26 +7,43 @@
                 <h1>Switch</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/register" id="form" method="POST">
-                @csrf
-                {{-- <div class="mb-8"> --}}
+            <div>
+
+                <form action="/register" id="form" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <label for="">Email</label>
                     <input type="text" name="email" >
                     @error('email')
                     <div class="alert alert-danger">
-                        {{ $message }}
+                    {{ $message }}
                     </div>
                     @enderror
-                {{-- </div> --}}
-                <label for="">Username</label>
-                <input type="text" name="nama">
-                <label for="">Password</label>
-                <input type="text" name="password">
-                <label for="">Telephone</label>
-                <input type="text" name="telephon">
-                <hr>
-                <button type="submit" id="login-btn">Sign Up</button>
-            </form>
+                    
+                    <label for="">Username</label>
+                    <input type="text" name="nama">
+                    @error('nama')
+                    <div class="alert alert-danger">
+                    {{ $message }}
+                    </div>
+                    @enderror
+                    <label for="">Password</label>
+                    <input type="password" name="password">
+                    @error('password')
+                    <div class="alert alert-danger">
+                    {{ $message }}
+                    </div>
+                    @enderror
+                    <label for="">Telephone</label>
+                    <input type="text" name="telphone">
+                    @error('telphone')
+                    <div class="alert alert-danger">
+                    {{ $message }}
+                    </div>
+                    @enderror
+                    <hr>
+                    <button type="submit" id="login-btn">Sign Up</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -39,14 +56,23 @@
                 <h1>Switch</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" id="form">
+            <form action="/login" id="form" method="POST" enctype="multipart/form-data">
+                @csrf
                 <label for="">Username</label>
-                <input type="text">
+                <input type="text" name="nama">
+                @error('nama')
+                <div class="alert alert-danger">
+                {{ $message }}
+                </div>
+                @enderror
                 <label for="">Password</label>
-                <input type="text">
-                {{-- <div id="error-msg">
-                    <p id="msg">Error</p>
-                </div> --}}
+                <input type="password" name="password">
+                @error('password')
+                <div class="alert alert-danger">
+                {{ $message }}
+                </div>
+                @enderror
+                <hr>
                 <button value="Login" id="login-btn">Sign In</button>
             </form>
         </div>

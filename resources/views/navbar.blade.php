@@ -16,13 +16,25 @@
 
         </div>
 
-        <!-- BUTTONS -->
+        @auth
+        <div class="col-4 align-items-start py-3">
+            <div class="d-flex justify-content-end" id="buttons">
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button id="logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+        @else
         <div class="col-4 align-items-center py-3">
             <div class="d-flex justify-content-end" id="buttons">
                 <button class="btn success px-3" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</button>
-
                 <input class="btn btn-outline rounded" type="button" value="Sign up" id="sign-up-button" data-bs-toggle="modal" data-bs-target="#regisModal">
             </div>
         </div>
+        @endauth
+
+        <!-- BUTTONS -->
+
     </div>
 </div>

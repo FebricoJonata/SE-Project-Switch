@@ -7,6 +7,8 @@
     <section id="main-content">
         <div id="background-gambar">
             @include('truenavbar')
+
+            
             <!-- UNTUK CAROUSEL MAIN -->
             <div class="container overflow-hidden">
                 <div class="row align-items-center">

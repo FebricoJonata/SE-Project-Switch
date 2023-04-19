@@ -19,7 +19,7 @@
 
 
     <title>@yield('title')</title>
-    <div id="modal-backdrop fade in"></div>
+    {{-- <div id="modal-backdrop fade in"></div> --}}
 </head>
 <style>
     @font-face{
