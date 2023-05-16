@@ -5,12 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
-{
-    public function view(){
-        return view('home');
-    }
-
+class RegisterController extends Controller{
+    
     public function storeData(Request $request){
         // dd('test');
         $validasi = $request->validate([
@@ -21,7 +17,7 @@ class RegisterController extends Controller
         ]);
         $validasi['password'] = bcrypt($validasi['password']);
         User::create($validasi);
-        dd($validasi);
+        return redirect('/');
     }
 
 

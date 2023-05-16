@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="./Assets/images/dota-carousel-1.jpg" class="d-block w-100"
+                                        <img src="" class="d-block w-100"
                                             id="carousel-gambar" alt="...">
                                     </div>
                                     <div class="carousel-item">
@@ -61,9 +61,29 @@
                 <h3 style="color:white">DOTA 2 SKINS</h3>
             </div>
             <div class="d-flex flex-between" id="card-carousel-frame">
+
+                @foreach ($barang as $barangs)
                 <div class="container d-flex flex-row overflow-hidden px-3">
-
                     <div class="card border-dark mx-3" style="width: 18rem;">
+                        {{-- <img src="https://source.unsplash.com/600x400?{{ $barangs->nama }}" class="card-img-top" alt="...">  --}}
+                        {{-- <img src="{{url('storage/'.$barangs->foto)}}" class="card-img-top" alt="Error" id="card-image"> --}}
+                        <img src="{{Storage::url($barangs->foto)}}" class="card-img-top" alt="Error" id="card-image">
+                        <div class="card-body bg-dark ">
+                            <div class="container align-items-center">
+                                <p class="card-text" id="itemName"> {{$barangs->nama}} </p>
+                                <p class="card-text" id="itemPrice">Rp.
+                                    <span>{{$barangs->harga}}</span>
+                                </p>
+                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
+                                    id="link-card">Get
+                                    Skin</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
                         <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
                         <div class="card-body bg-dark ">
                             <div class="container align-items-center">
@@ -76,10 +96,9 @@
                                     Skin</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-
-                    <div class="card border-dark mx-3" style="width: 18rem;">
+                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
                         <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
                         <div class="card-body bg-dark ">
                             <div class="container align-items-center">
@@ -92,9 +111,9 @@
                                     Skin</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="card border-dark mx-3" style="width: 18rem;">
+                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
                         <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
                         <div class="card-body bg-dark ">
                             <div class="container align-items-center">
@@ -107,25 +126,9 @@
                                     Skin</a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="card border-dark mx-3" style="width: 18rem;">
-                        <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
-                        <div class="card-body bg-dark ">
-                            <div class="container align-items-center">
-                                <p class="card-text" id="itemName">ZEUS - ARCANA</p>
-                                <p class="card-text" id="itemPrice">Rp.
-                                    <span>459.000</span>
-                                </p>
-                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
-                                    id="link-card">Get
-                                    Skin</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div> --}}
 
                 </div>
-
             </div>
 
             <!-- CATALOG ITEMS-->

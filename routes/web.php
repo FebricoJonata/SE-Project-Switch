@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -17,22 +18,24 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('home');
-    
 // });
 
-// Route::get('/home', function(){
-//     return view('home');
-// });
-
-// Route::get('/catalog', function(){
-//     return view('catalog');
-// });
-
-Route::get('/dashboard', function(){
-    return view('dashboard');
+Route::get('/detail', function(){
+    return view('detailPage');
 });
 
-Route::get('/', [RegisterController::class, 'view']);
+Route::get('/catalog', function(){
+    return view('catalog');
+});
+
+// Route::get('/dashboard', function(){
+//     return view('dashboard');
+// });
+
+Route::get('/', [BarangController::class, 'showHomePage']);
+Route::get('/dashboard', [BarangController::class, 'showDashboard']);
+Route::post('/dashboard/insert', [BarangController::class, 'store']);
+
 Route::post('/register', [RegisterController::class, 'storeData']);
 
 Route::post('/login', [LoginController::class, 'verify']);

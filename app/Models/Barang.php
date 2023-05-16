@@ -13,6 +13,6 @@ class Barang extends Model
         'nama',
         'harga',
         'jumlah',
-        'foto'
+        'foto',
     ];
 }
