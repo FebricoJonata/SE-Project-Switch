@@ -26,6 +26,11 @@ class BarangController extends Controller
         return view('home', ['barang' => $barang]);
     }
 
+    public function showCatalogPage(){
+        $barang = Barang::all();
+        return view('catalog', ['barang' => $barang]);
+    }
+
 
 
     /**
@@ -78,9 +83,10 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(Barang $barang)
+    public function showItemByID(Barang $id)
     {
-        //
+        $barang = Barang::find($id);
+        return view('detailPage', ['barang' => $barang]);
     }
 
     /**

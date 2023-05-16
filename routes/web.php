@@ -33,6 +33,9 @@ Route::get('/catalog', function(){
 // });
 
 Route::get('/', [BarangController::class, 'showHomePage']);
+Route::get('/catalog', [BarangController::class, 'showCatalogPage']);
+Route::get('/detail/{id}', [BarangController::class, 'showItemByID']);
+
 Route::get('/dashboard', [BarangController::class, 'showDashboard']);
 Route::post('/dashboard/insert', [BarangController::class, 'store']);
 

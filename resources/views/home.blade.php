@@ -7,8 +7,6 @@
     <section id="main-content">
         <div id="background-gambar">
             @include('truenavbar')
-
-            
             <!-- UNTUK CAROUSEL MAIN -->
             <div class="container overflow-hidden">
                 <div class="row align-items-center">
@@ -26,16 +24,31 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="" class="d-block w-100"
-                                            id="carousel-gambar" alt="...">
+                                        @if ($barang[0]->foto)
+                                            <div style="max-height: 600px; max-width: 1600px; overflow: hidden" id="carousel-gambar">
+                                                <img src="{{Storage::url($barang[0]->foto)}}" class="img-fluid" alt="photo">
+                                            </div>
+                                        @else
+                                            <img src="https://source.unsplash.com/1600x600?{{ $barang[0]->nama }}" class="img-fluid" alt="photo">
+                                        @endif
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./Assets/Images/dota-carousel-2.jpg" class="d-block w-100"
-                                            id="carousel-gambar" alt="...">
+                                        @if ($barang[1]->foto)
+                                            <div style="max-height: 600px; max-width: 1600px; overflow: hidden" id="carousel-gambar">
+                                                <img src="{{Storage::url($barang[1]->foto)}}" class="img-fluid" alt="photo">
+                                            </div>
+                                        @else
+                                            <img src="https://source.unsplash.com/1600x600?{{ $barang[1]->nama }}" class="img-fluid" alt="photo">
+                                        @endif
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./Assets/Images/dota-carousel-3.jpg" class="d-block w-100"
-                                            id="carousel-gambar" alt="...">
+                                        @if ($barang[2]->foto)
+                                            <div style="max-height: 600px; max-width: 1600px; overflow: hidden" id="carousel-gambar">
+                                                <img src="{{Storage::url($barang[2]->foto)}}" class="img-fluid" alt="photo">
+                                            </div>
+                                        @else
+                                            <img src="https://source.unsplash.com/1600x600?{{ $barang[2]->nama }}" class="img-fluid" alt="photo">
+                                        @endif
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
@@ -61,73 +74,32 @@
                 <h3 style="color:white">DOTA 2 SKINS</h3>
             </div>
             <div class="d-flex flex-between" id="card-carousel-frame">
-
-                @foreach ($barang as $barangs)
-                <div class="container d-flex flex-row overflow-hidden px-3">
-                    <div class="card border-dark mx-3" style="width: 18rem;">
-                        {{-- <img src="https://source.unsplash.com/600x400?{{ $barangs->nama }}" class="card-img-top" alt="...">  --}}
-                        {{-- <img src="{{url('storage/'.$barangs->foto)}}" class="card-img-top" alt="Error" id="card-image"> --}}
-                        <img src="{{Storage::url($barangs->foto)}}" class="card-img-top" alt="Error" id="card-image">
-                        <div class="card-body bg-dark ">
-                            <div class="container align-items-center">
-                                <p class="card-text" id="itemName"> {{$barangs->nama}} </p>
-                                <p class="card-text" id="itemPrice">Rp.
-                                    <span>{{$barangs->harga}}</span>
-                                </p>
-                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
-                                    id="link-card">Get
-                                    Skin</a>
+                    <div class="container mt-4">
+                        <div class="row">
+                            @for ($i = 0; $i < 3; $i++)
+                            <div class="col-md-4 mb-3 d-flex flex-row overflow-hidden px-3 ">
+                                <div class="card border-dark mx-3" style="width: 18rem; img-fluid">
+                                    @if ($barang[$i]->foto)
+                                    <img src="{{Storage::url($barang[$i]->foto)}}" class="card-img-top" alt="Image" id="card-image"> 
+                                    @else
+                                    <img src="https://source.unsplash.com/600x400?{{ $barang[$i]->nama }}" class="card-img-top" alt="API"> 
+                                    @endif
+                                    <div class="card-body bg-dark ">
+                                        <div class="container align-items-center">
+                                            <p class="card-text" id="itemName"> {{$barang[$i]->nama}} </p>
+                                            <p class="card-text" id="itemPrice">Rp.
+                                                <span>{{$barang[$i]->harga}}</span>
+                                            </p>
+                                            <a href="/detail/{{$barang[$i]->id}}"class="btn btn-outline-secondary text-align-center"
+                                                id="link-card">Get
+                                                Skin</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            @endfor
                         </div>
                     </div>
-                @endforeach
-
-
-                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
-                        <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
-                        <div class="card-body bg-dark ">
-                            <div class="container align-items-center">
-                                <p class="card-text" id="itemName">ZEUS - ARCANA</p>
-                                <p class="card-text" id="itemPrice">Rp.
-                                    <span>459.000</span>
-                                </p>
-                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
-                                    id="link-card">Get
-                                    Skin</a>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
-                        <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
-                        <div class="card-body bg-dark ">
-                            <div class="container align-items-center">
-                                <p class="card-text" id="itemName">ZEUS - ARCANA</p>
-                                <p class="card-text" id="itemPrice">Rp.
-                                    <span>459.000</span>
-                                </p>
-                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
-                                    id="link-card">Get
-                                    Skin</a>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    {{-- <div class="card border-dark mx-3" style="width: 18rem;">
-                        <img src="./Assets/Images/image 1.png" class="card-img-top" alt="..." id="card-image">
-                        <div class="card-body bg-dark ">
-                            <div class="container align-items-center">
-                                <p class="card-text" id="itemName">ZEUS - ARCANA</p>
-                                <p class="card-text" id="itemPrice">Rp.
-                                    <span>459.000</span>
-                                </p>
-                                <a href="./detailPage.html" class="btn btn-outline-secondary text-align-center"
-                                    id="link-card">Get
-                                    Skin</a>
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
 
@@ -146,4 +118,8 @@
         </div>
     </section>
 </section>
+
+<div class="pagination d-flex justify-content-center">
+    {{-- {{ $barang->links() }} --}}
+</div>
 @endsection
