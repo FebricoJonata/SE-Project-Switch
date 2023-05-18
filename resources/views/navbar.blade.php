@@ -9,12 +9,17 @@
 
         <!-- SEARCH -->
         <div class="col-4 py-3">
-            <form class="form-inline">
-                <input type="search" placeholder="Search for dota 2 items" aria-label="Search"
-                    id="search-navbar" class="form-control mr-sm-2" onkeyup="search_home()">
+            <form class="form-inline" action="/catalog" method="GET">
+                <input type="text" placeholder="Search for dota 2 items" aria-label="Search"
+                    id="search-navbar" class="form-control mr-sm-2" onkeyup="search_home()" name="search">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
             </form>
-
         </div>
+
+        {{-- <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" >
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        </div> --}}
 
         @auth
         <div class="col-4 align-items-start py-3">

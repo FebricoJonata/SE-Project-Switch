@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('harga');
             $table->integer('jumlah');
             $table->string('foto');
+            $table->unsignedBigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

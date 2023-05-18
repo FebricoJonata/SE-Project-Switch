@@ -26,9 +26,16 @@ class BarangController extends Controller
         return view('home', ['barang' => $barang]);
     }
 
-    public function showCatalogPage(){
-        $barang = Barang::all();
-        return view('catalog', ['barang' => $barang]);
+    public function showCatalogPage(Request $request){
+        // dd(request('search'));
+
+        $barang = Barang::latest();
+
+        if(request('search')){
+            $barang->where('nama', 'LIKE', '%'.$request->search.'%')->paginate();
+        }
+        
+        return view('catalog', ["barang" => $barang->paginate(10)]);
     }
 
 

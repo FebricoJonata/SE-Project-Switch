@@ -91,8 +91,7 @@
                                                 <span>{{$barang[$i]->harga}}</span>
                                             </p>
                                             <a href="/detail/{{$barang[$i]->id}}"class="btn btn-outline-secondary text-align-center"
-                                                id="link-card">Get
-                                                Skin</a>
+                                                id="link-card">Get Skin</a>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +109,7 @@
                     <h3 class="text-light text-center mb-4" id="description-bawah">
                         become the envy of all players
                     </h3>
-                    <a class="btn rounded" id="button-catalog" href="./catalog.html">See
+                    <a class="btn rounded" id="button-catalog" href="/catalog">See
                         Catalog</a>
                     <!-- <button class="btn success px-3" id="sign-in-button">Sign in</button> -->
                 </div>

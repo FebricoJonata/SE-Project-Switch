@@ -49,4 +49,10 @@
         </section>
     </div>
 </section>
+
+<div class="d-flex justify-content-center bg-dark">
+    {{$barang->links()}}
+</div>
+
+
 @endsection
