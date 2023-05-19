@@ -18,7 +18,7 @@ class BarangController extends Controller
      */
     public function showDashboard()
     {
-        return view('dashboard');
+        return view('Dashboard.view');
     }
 
     public function showHomePage(){

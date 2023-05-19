@@ -1,13 +1,12 @@
-@extends('template')
+@extends('/Dashboard/dashboard')
 
-@section('title', 'Dashboard')
-
+@section('tittle', 'Create Product')
 
 @section('content')
 
-<section class="bg-dark" id="main-body"> 
-    <section id="main-content"> 
-        <div id="background-gambar"> 
+{{-- <section class="bg-dark" id="main-body">   --}}
+    {{-- <section id="main-content"> 
+        <div id="background-gambar">  --}}
 
             {{-- <h1 class="text-light">Welcome, {{ auth()->user()->nama }}</h1> --}}
             {{-- <hr> --}}
@@ -33,7 +32,7 @@
                     <button class="btn btn-primary" type="submit">submit</button>
                 </form>
             </div>
-        </div>
+        {{-- </div>
     </section>
-</section>
+</section> --}}
 @endsection

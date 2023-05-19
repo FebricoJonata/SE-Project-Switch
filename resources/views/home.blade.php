@@ -118,7 +118,4 @@
     </section>
 </section>
 
-<div class="pagination d-flex justify-content-center">
-    {{-- {{ $barang->links() }} --}}
-</div>
 @endsection

@@ -16,17 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
+Route::get('/test', function () {
+    return view('cart');
+});
+
+Route::get('/create-product', function(){
+    return view('Dashboard.createProduct');
+});
+
+// Route::get('/catalog', function(){
+//     return view('catalog');
 // });
-
-Route::get('/detail', function(){
-    return view('detailPage');
-});
-
-Route::get('/catalog', function(){
-    return view('catalog');
-});
 
 // Route::get('/dashboard', function(){
 //     return view('dashboard');
@@ -43,3 +43,6 @@ Route::post('/register', [RegisterController::class, 'storeData']);
 
 Route::post('/login', [LoginController::class, 'verify']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+
+

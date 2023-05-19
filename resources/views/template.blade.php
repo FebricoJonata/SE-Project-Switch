@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/catalog-style.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/background.css">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     
@@ -31,10 +37,13 @@
     }
 </style>
 <body>
-    @include('navbar')
-    @include('form')
-    @yield('content')
-    @include('footer')
+    @include('background')
+    <div class="vh-100 position-relative z-20 w-auto d-flex flex-column justify-content-between">
+        @include('navbar')
+        @include('form')
+        @yield('content')
+        @include('footer')
+    </div>
 </body>
 
 </html>

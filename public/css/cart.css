@@ -1,0 +1,50 @@
+#product {
+    background-color: #886299;
+    border-radius: 30px;
+    box-shadow: 0 5px 5px 3px rgb(50, 50, 50);
+}
+
+.cart-image {
+    height: 180px;
+    width: 240px;
+    border-radius: 30px;
+}
+
+.product-name {
+    color: white;
+}
+
+.text-big {
+    color: white;
+    font-size: 50px;
+}
+
+#close-btn {
+    color: red;
+}
+
+#total-bar {
+    background: linear-gradient(to right, #A681D3, #527D77);
+    height: 65px;
+}
+
+#buy-btn {
+    width: 100px;
+    background-color: #525252;
+    text-decoration: none;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+#total-items {
+    color: white;
+}
+
+#total-price {
+    color: #0FDC23;
+}
