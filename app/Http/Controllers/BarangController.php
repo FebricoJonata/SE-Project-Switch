@@ -11,14 +11,10 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class BarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showDashboard()
-    {
-        return view('Dashboard.view');
+
+    public function showDashboard(){
+        $barang = Barang::all();
+        return view('Dashboard.view', ['barangs' => $barang]);
     }
 
     public function showHomePage(){
@@ -27,7 +23,6 @@ class BarangController extends Controller
     }
 
     public function showCatalogPage(Request $request){
-        // dd(request('search'));
 
         $barang = Barang::latest();
 
@@ -40,12 +35,6 @@ class BarangController extends Controller
 
 
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     
     public function store(Request $request)
     {
@@ -84,24 +73,43 @@ class BarangController extends Controller
         return redirect('/dashboard');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
+    
     public function showItemByID(Barang $id)
     {
         $barang = Barang::find($id);
         return view('detailPage', ['barang' => $barang]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
+
+    public function cart(){
+        return view('cart');
+    }
+
+    public function addToCart($id){
+        $cart = session("cart");
+
+
+        $barang = Barang::findOrFail($id);
+        
+        // $cart = session()->get('cart', []);
+
+        $cart[$id] = [
+            "nama" => $barang->nama,
+            "harga" => $barang->harga,
+            "jumlah" => $barang->jumlah,
+            "foto" => $barang->foto,
+            "quantity" => 1,
+        ];
+
+        session(["cart" => $cart]);
+        return redirect('/cart');
+
+        // session()->put('cart', $cart);
+    }
+
+
+
+
     public function edit(Barang $barang)
     {
         //

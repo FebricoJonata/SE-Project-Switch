@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return view('cart');
-});
+// Route::get('/test', function () {
+//     return view('cart');
+// });
 
 Route::get('/create-product', function(){
     return view('Dashboard.createProduct');
@@ -44,5 +44,7 @@ Route::post('/register', [RegisterController::class, 'storeData']);
 Route::post('/login', [LoginController::class, 'verify']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/cart', [BarangController::class, 'cart']);
+Route::get('/add-cart/{id}', [BarangController::class, 'addToCart'])->name('add_to_cart');
 
 

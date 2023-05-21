@@ -34,12 +34,14 @@
                     <br>
                     <br>
                     <br>
-                    <div class="container d-flex flex-between justify-content-center"><input
-                            class="btn btn-outline rounded px-3" type="submit" value="Add to cart"
-                            id="sign-up-button">
+                    <div class="container d-flex flex-between justify-content-center">
+                        <a href=""><input class="btn btn-outline rounded px-3" type="submit" value="Add to cart"
+                            id="sign-up-button"></a>
+                        
                     </div>
                     <div class="container d-flex flex-between justify-content-center">
-                        <button class="btn success justify-content-center" id="buy-now-btn">Buy now</button>
+                        <button class="btn success justify-content-center" id="buy-now-btn">
+                            Buy now</button>
                     </div>
                 </div>
             </div>

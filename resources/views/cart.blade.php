@@ -4,7 +4,10 @@
 
 @section('content')
     <div class="container">
-        @for ($i=0; $i<3; $i++)
+        {{-- @for ($i=0; $i<3; $i++) --}}
+        @if (session('cart'))
+        @foreach(session('cart') as $id => $details)
+        @php $total += $details['harga'] * $details['quantity'] @endphp
         <div class="card my-5" id="product">
             <div class="card-body d-flex justify-content-between">
                 <div id="left" class="d-flex align-items-center">
@@ -12,16 +15,18 @@
                         <img class="cart-image" src="https://images.unsplash.com/photo-1680762424301-604a1697f698?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
                     </div>
                     <div id="left-name" class="mx-3">
-                        <h1 class="product-name">Zeus</h1>
+                        <h1 class="product-name">{{$details['nama']}}</h1>
                         <h1 class="text-big">
                             <b>Arcana</b>
                         </h1>
                     </div>
                 </div>
+
+
                 <div id="right" class="d-flex">
                     <div id="right-price" class="d-flex justify-content-center align-items-center">
                         <h1 class="text-big">
-                            Rp.300.000
+                            {{$total}}
                         </h1>
                     </div>
                     <div id="right-close" >
@@ -32,7 +37,10 @@
                 </div>
             </div>
         </div>
-        @endfor
+        @endforeach
+        @endif
+        
+        {{-- @endfor --}}
     </div>
 
     <div id="total-bar" class="fixed-bottom d-flex align-items-center">

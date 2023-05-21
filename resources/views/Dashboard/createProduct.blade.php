@@ -3,14 +3,7 @@
 @section('tittle', 'Create Product')
 
 @section('content')
-
-{{-- <section class="bg-dark" id="main-body">   --}}
-    {{-- <section id="main-content"> 
-        <div id="background-gambar">  --}}
-
-            {{-- <h1 class="text-light">Welcome, {{ auth()->user()->nama }}</h1> --}}
-            {{-- <hr> --}}
-            <div class="container ">
+        <div class="container ">
                 <form action="/dashboard/insert" method="POST" enctype="multipart/form-data" id="form">
                     @csrf
                     <div class="col-8">
@@ -31,8 +24,6 @@
                     </div>
                     <button class="btn btn-primary" type="submit">submit</button>
                 </form>
-            </div>
-        {{-- </div>
-    </section>
-</section> --}}
+        </div>
+
 @endsection
