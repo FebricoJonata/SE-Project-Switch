@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -44,7 +45,8 @@ Route::post('/register', [RegisterController::class, 'storeData']);
 Route::post('/login', [LoginController::class, 'verify']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/cart', [BarangController::class, 'cart']);
-Route::get('/add-cart/{id}', [BarangController::class, 'addToCart'])->name('add_to_cart');
+Route::get('/cart', [CartController::class, 'cart']);
+Route::get('/add-cart/{id}', [CartController::class, 'addToCart']);
+Route::get('/del-cart/{id}', [CartController::class, 'deletecart']);
 
 

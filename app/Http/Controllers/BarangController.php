@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Cart;
 use Dotenv\Validator;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Illuminate\Support\Facades\Auth;
 
 class BarangController extends Controller
 {
@@ -24,28 +26,20 @@ class BarangController extends Controller
 
     public function showCatalogPage(Request $request){
 
-        $barang = Barang::latest();
+        $barang = Barang::all();
 
-        if(request('search')){
-            $barang->where('nama', 'LIKE', '%'.$request->search.'%')->paginate();
+        if($request->has('search')){
+            $barang->where('nama', 'LIKE', '%'.$request->search.'%');
         }
-        
-        return view('catalog', ["barang" => $barang->paginate(10)]);
+        // $barang = $barang->paginate(10);
+        return view('catalog', compact('barang'));
     }
 
 
 
-    
+
     public function store(Request $request)
     {
-        // if($request->file('foto')){
-        //     $extension = $request->file('foto')->getClientOriginalExtension();
-        //     $fileName = $request->nama.'.'.$extension;//rename image
-        //     $validasi['foto'] = $request->file('foto')->storeAs('public/image', $fileName);
-        //     // dd($fileName);
-        // }
-        // Barang::create($validasi);
-        // return redirect('/dashboard');
 
         $rules = [
             'nama' => 'required',
@@ -70,41 +64,14 @@ class BarangController extends Controller
         $barang->jumlah = $request->jumlah;
         $barang->foto = $image;
         $barang->save();
-        return redirect('/dashboard');
+        return redirect('/create-product');
     }
 
-    
+
     public function showItemByID(Barang $id)
     {
         $barang = Barang::find($id);
         return view('detailPage', ['barang' => $barang]);
-    }
-
-
-    public function cart(){
-        return view('cart');
-    }
-
-    public function addToCart($id){
-        $cart = session("cart");
-
-
-        $barang = Barang::findOrFail($id);
-        
-        // $cart = session()->get('cart', []);
-
-        $cart[$id] = [
-            "nama" => $barang->nama,
-            "harga" => $barang->harga,
-            "jumlah" => $barang->jumlah,
-            "foto" => $barang->foto,
-            "quantity" => 1,
-        ];
-
-        session(["cart" => $cart]);
-        return redirect('/cart');
-
-        // session()->put('cart', $cart);
     }
 
 

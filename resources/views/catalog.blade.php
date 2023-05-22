@@ -25,9 +25,9 @@
                                 <div class="col-md-4 mb-3 d-flex flex-row overflow-hidden px-3 ">
                                     <div class="card border-dark mx-3" style="width: 18rem; img-fluid">
                                         @if ($barangs->foto)
-                                        <img src="{{Storage::url($barangs->foto)}}" class="card-img-top" alt="Image" id="card-image"> 
+                                        <img src="{{Storage::url($barangs->foto)}}" class="card-img-top" alt="Image" id="card-image">
                                         @else
-                                        <img src="https://source.unsplash.com/600x400?{{ $barangs->nama }}" class="card-img-top" alt="API"> 
+                                        <img src="https://source.unsplash.com/600x400?{{ $barangs->nama }}" class="card-img-top" alt="API">
                                         @endif
                                         <div class="card-body bg-dark ">
                                             <div class="container align-items-center">
@@ -50,9 +50,9 @@
     </div>
 </section>
 
-<div class="d-flex justify-content-center bg-dark">
+{{-- <div class="d-flex justify-content-center bg-dark">
     {{$barang->links()}}
-</div>
+</div> --}}
 
 
 @endsection
