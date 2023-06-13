@@ -50,21 +50,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span data-feather="file" class="align-text-bottom"></span>
-                    Orders
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/create-product">
                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                     Products
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span data-feather="users" class="align-text-bottom"></span>
-                    Customers
                     </a>
                 </li>
             </ul>

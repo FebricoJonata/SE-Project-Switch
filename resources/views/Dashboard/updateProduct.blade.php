@@ -1,11 +1,12 @@
 @extends('/Dashboard/dashboard')
 
-@section('tittle', 'Create Product')
+@section('tittle', 'Update Product')
 
 @section('content')
         <div class="container">
-                <form action="/dashboard/insert" method="POST" enctype="multipart/form-data" id="form">
+                <form action="/dashboard/update/{{$barang->id}}" method="POST" enctype="multipart/form-data" id="form">
                     @csrf
+                    @method('patch')
                     <div class="col-8">
                         <label for="nama" class="form-label">Nama Barang</label>
                         <input type="text" class="form-control" name="nama">

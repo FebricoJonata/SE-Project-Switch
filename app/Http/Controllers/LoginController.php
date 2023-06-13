@@ -14,11 +14,10 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        // dd('masuk');
 
         if (Auth::attempt($userIdentity)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('home');
         }
     }
 

@@ -38,9 +38,7 @@ class BarangController extends Controller
 
 
 
-    public function store(Request $request)
-    {
-
+    public function store(Request $request){
         $rules = [
             'nama' => 'required',
             'harga' => 'required',
@@ -68,40 +66,53 @@ class BarangController extends Controller
     }
 
 
-    public function showItemByID(Barang $id)
-    {
+    public function showItemByID(Barang $id){
         $barang = Barang::find($id);
         return view('detailPage', ['barang' => $barang]);
     }
 
 
-
-
-    public function edit(Barang $barang)
+    public function update(Request $request, $id)
     {
-        //
+        $barang = Barang::find($id);
+
+        $rules = [
+            'nama' => 'required',
+            'harga' => 'required',
+            'jumlah' => 'required',
+            'foto' => 'required|image'
+        ];
+
+        $validator = FacadesValidator::make($request->all(), $rules);
+        if($validator->fails()){
+            return back()->withErrors($validator);
+        }
+
+        $file = $request->file('foto');
+        $filename = $file->getClientOriginalName();
+        Storage::putFileAs('public/images', $file, $filename);
+        $image = 'images/'.$filename;
+
+        // $barang = new Barang();
+        // $barang->nama = $request->nama;
+        // $barang->harga = $request->harga;
+        // $barang->jumlah = $request->jumlah;
+        $barang->foto = $image;
+        $barang->update($request->all());
+        return redirect('/dashboard');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Barang $barang)
-    {
-        //
+    public function getBarangById($id) {
+        $barang = Barang::find($id);
+        return view('Dashboard.updateProduct', ['barang' => $barang]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Barang  $barang
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Barang $barang)
+
+
+    public function destroy(Barang $id)
     {
-        //
+        $barang = Barang::find($id);
+        Barang::destroy($barang);
+        return redirect('/dashboard');
     }
 }

@@ -17,36 +17,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/test', function () {
-//     return view('cart');
-// });
 
 Route::get('/create-product', function(){
     return view('Dashboard.createProduct');
 });
 
-// Route::get('/catalog', function(){
-//     return view('catalog');
-// });
-
-// Route::get('/dashboard', function(){
-//     return view('dashboard');
-// });
-
-Route::get('/', [BarangController::class, 'showHomePage']);
+Route::get('/', [BarangController::class, 'showHomePage'])->name('home');
 Route::get('/catalog', [BarangController::class, 'showCatalogPage']);
 Route::get('/detail/{id}', [BarangController::class, 'showItemByID']);
-
-Route::get('/dashboard', [BarangController::class, 'showDashboard']);
-Route::post('/dashboard/insert', [BarangController::class, 'store']);
 
 Route::post('/register', [RegisterController::class, 'storeData']);
 
 Route::post('/login', [LoginController::class, 'verify']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/cart', [CartController::class, 'cart']);
-Route::get('/add-cart/{id}', [CartController::class, 'addToCart']);
-Route::get('/del-cart/{id}', [CartController::class, 'deletecart']);
+Route::middleware(['auth'])->group(function(){
+    Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('/add-cart/{id}', [CartController::class, 'addToCart']);
+    Route::get('/del-cart/{id}', [CartController::class, 'deletecart']);
+});
 
-
+Route::middleware(['auth', 'admin'])->group(function(){
+    Route::get('/dashboard', [BarangController::class, 'showDashboard']);
+    Route::post('/dashboard/insert', [BarangController::class, 'store']);
+    Route::delete('/dashboard/{id}', [BarangController::class, 'destroy']);
+    Route::get('/dashboard/update/{id}', [BarangController::class, 'getBarangById']);
+    Route::patch('/dashboard/update/{id}', [BarangController::class, 'update']);
+});

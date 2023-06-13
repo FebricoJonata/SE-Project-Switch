@@ -24,7 +24,7 @@
                     <td>{{$barang->harga}}</td>
                     <td>{{ $barang->jumlah }}</td>
                     <td>
-                        <a href="/dashboard/{{ $barang->id }}/edit" class="btn bg-warning"><i class="bi bi-pencil"></i></span></a>
+                        <a href="/dashboard/update/{{ $barang->id }}" class="btn bg-warning"><i class="bi bi-pencil"></i></span></a>
                         <form action="/dashboard/{{ $barang->id }}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf

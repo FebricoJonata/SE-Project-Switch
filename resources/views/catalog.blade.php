@@ -14,7 +14,7 @@
 
 
                 <!-- DOTA 2 -->
-                <h1 class="text-light mt-5 ms-4 mb-4" id="judul-item">DOTA 2</h1>
+                {{-- <h1 class="text-light mt-5 ms-4 mb-4" id="judul-item">DOTA 2</h1> --}}
 
 
                 <div class="container d-flex flex-row" id="product-list">

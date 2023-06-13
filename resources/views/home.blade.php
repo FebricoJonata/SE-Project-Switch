@@ -25,7 +25,7 @@
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         @if ($barang[0]->foto)
-                                            <div style="max-height: 600px; max-width: 1600px; overflow: hidden" id="carousel-gambar">
+                                            <div style="width:100%; overflow: hidden" id="carousel-gambar">
                                                 <img src="{{Storage::url($barang[0]->foto)}}" class="img-fluid" alt="photo">
                                             </div>
                                         @else
@@ -64,7 +64,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
